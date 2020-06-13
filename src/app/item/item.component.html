@@ -1,6 +1,12 @@
 
   <a style="cursor: pointer;" class="list-group-item">
       <h3 class="list-group-item-heading">{{ character.name }}</h3>
+      <ul class="list-group">
+        <li class="list-group-item"><span>Name : </span>{{ character.name }}</li>
+        <li class="list-group-item"><span>Height : </span> {{ character.height }}</li>
+        <li class="list-group-item"><span>Mass : </span> {{ character.mass }}</li>
+        <li class="list-group-item"><span>Gender : </span> {{ character.gender }}</li>
+      </ul>
     <div>
       <button class="btn btn-primary" (click)="onAssign('light')">Light </button>
       <button class="btn btn-danger" (click)="onAssign('dark')">Dark </button>

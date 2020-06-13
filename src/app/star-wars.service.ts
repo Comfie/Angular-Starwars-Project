@@ -27,10 +27,10 @@ export class StarWarsService {
     .subscribe(
       (data) => {
         const chars = data['results'].map(char => {
-          return {name: char.name, side: ''};
+          return {name: char.name, side: '', height: char.height, mass: char.mass, gender: char.gender};
         });
         this.characters = chars;
-        this.charactersChanged.next(); // this is used to immdiatelly load data when you make a request 
+        this.charactersChanged.next(); // this is used to immdiatelly load data when you make a request
         console.log(data);
       }
     );
@@ -54,7 +54,7 @@ export class StarWarsService {
     this.logService.writeLog('Change side of ' + charInfo.name + ', new side => ' + charInfo.side);
   }
 
-  addCharacter(name, side) {
+  addCharacter(name, side, height, mass, gender) {
     const pos = this.characters.findIndex((char) => {
       return char.name === name;
     });
@@ -62,7 +62,7 @@ export class StarWarsService {
       return;
 
     }
-    const newChar = {name: name, side: side};
+    const newChar = {name: name, side: side, height: height, mass: mass, gender: gender};
     this.characters.push(newChar);
   }
 
