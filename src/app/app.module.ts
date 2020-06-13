@@ -10,6 +10,7 @@ import { ListComponent } from './list/list.component';
 import { ItemComponent } from './item/item.component';
 import { HeaderComponent } from './header/header.component';
 import { CreateCharacterComponent } from './create-character/create-character.component';
+import { TestComponent } from './test/test.component';
 
 
 const routes = [
@@ -18,6 +19,7 @@ const routes = [
     { path: ':side', component: ListComponent }
   ] },
   { path: 'new-character', component: CreateCharacterComponent },
+  { path: 'test', component: TestComponent},
   { path: '**', redirectTo: '/characters' }
 ];
 
@@ -28,7 +30,8 @@ const routes = [
     ListComponent,
     ItemComponent,
     CreateCharacterComponent,
-    HeaderComponent
+    HeaderComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
