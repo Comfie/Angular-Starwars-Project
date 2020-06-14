@@ -11,17 +11,10 @@ import { ItemComponent } from './item/item.component';
 import { HeaderComponent } from './header/header.component';
 import { CreateCharacterComponent } from './create-character/create-character.component';
 import { TestComponent } from './test/test.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
-const routes = [
-  { path: 'characters', component: TabsComponent, children: [
-    { path: '', redirectTo: 'all', pathMatch: 'full' },
-    { path: ':side', component: ListComponent }
-  ] },
-  { path: 'new-character', component: CreateCharacterComponent },
-  { path: 'test', component: TestComponent},
-  { path: '**', redirectTo: '/characters' }
-];
+
 
 @NgModule({
   declarations: [
@@ -37,7 +30,7 @@ const routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
